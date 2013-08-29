@@ -1,0 +1,13 @@
+help ? h ;overrides everything
+autostart a
+problemsizexxxxx psxxxxx ;overrides mxxxx
+memoryxxxx mxxxx ;overrides psxxxxx
+nxxx
+maxmemory mm ; overrrides psxxxxx & mxxx
+minimized m  ;overrides t
+;trayonly t ;overrides m
+
+32 ;overrides 64
+64 ;overrrides 32
+thxx
+prx

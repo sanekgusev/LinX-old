@@ -1,0 +1,212 @@
+LinX 0.6.5
+
+- hopefully works with latest Linpack binaries
+
+LinX 0.6.4
+
+- added an option to run tests for a specified period of time. Use the drop-down list to set minutes or times to run tests
+- small UI redesign/enhancements
+- graph windows now correctly save their positions on program close
+- fixed a somewhat rare bug leading to false LinX errors when CPU usage was high
+- added new command-line options, fixed found bugs in older ones (run LinX.exe -help to view the list of command-line options)
+- added seconds to filenames to prevent overwriting
+
+LinX 0.6.3
+
+- removed the easter egg and added an option to extend glass for Windows Vista and Windows 7 users with Aero on
+- changed (raised) upper limit for 32-bit Linpack to 15500
+- graph selection is now saved
+- monitoring data (minimum and maximum values for each monitor) is now appended to the end of text log if graphs were enabled during testing
+- fixed a possible bug when LinX would stop responding if Linpack quits due to lack of memory
+- fixed a possible bug when running more than one instance of LinX simultaneously
+- fixed a possible bug in graphs that would lead to an error message if Everest or Speedfan was shut down during testing
+- fixed a bug with progressbar not visible on Classic theme
+
+
+LinX 0.6.2
+
+- threading and communication with Linpack improved as an attempt to fix the varying GFlops issue
+- current directory is now set to LinX' .exe directory on program start to prevent getting fake "Some Linpack files missing" messages 
+- screenshots of main window can now be made even with Seetings or About windows open
+
+
+LinX 0.6.1
+
+- Linpack files updated to version 10.2
+- main algorithm rewritten, might improve performance a bit
+- fixed an issue with inconsistent GFlops values in some cases
+- hotkeys for Start and Stop buttons added: Enter and Escape keys respectively
+
+
+LinX 0.6.0
+
+- added setting to change Linpack's priority
+- removed restriction to maximium number of threads (formerly equal to the logical CPUs number)
+- tweaked (rebased) the libiomp5md.dll for a higher possible Problem size of 32-bit Linpack
+- added setting to add date/time to saved files (logs & screenshots), on by default 
+- changed progressbar to look the same on all OSes and consume less resources
+- main menu changes/simplifications
+- command-line keys added (experimental), for the list of available parameters launch LinX.exe /?
+- some interface changes and optimizations
+- easter-egg added
+
+
+LinX 0.5.9.1
+
+- removed the restriction of maximum 999 runs
+- fixed a bug when displaying results of very small tests (Problem Size<1000)
+- samll optimizations
+
+
+LinX 0.5.9
+
+- elapsed/remaining time is now synchronized to Windows time
+- lots of inner bug fixes and optimizations
+- cosmetic interface changes
+
+
+LinX 0.5.8.2
+
+- LinX now works correctly when launched from CD/DVD disc
+- improved GUI look when scaling is enabled
+- minor enhancements
+
+
+LinX 0.5.8
+
+- now it is not necessary to run a test for current settings to be saved
+- added saving of the settings at the start of testing to prevent loosing them in case of BSOD or hang
+- added an option to save Linpack's log during testing, after every completed test (decreases performance a bit when selected)
+- graphs can now be shown during testing in real-time
+- improvements and enhancements to graph windows, graph window positions and sizes are now saved on exit
+- About and Information windows are now joined
+- small fixes/improvements
+
+
+LinX 0.5.7
+
+- slight UI redesign: some options moved to the Settings window
+- added a better About window
+
+
+LinX 0.5.6
+
+- interface fixes and enhancements, Linpack mode and number of threads are now displayed in statusbar
+- CPU name is noe displayed in statusbar
+- Linpack mode is now mentioned in text log too
+
+
+LinX 0.5.5
+
+- improved threading control. 2 Linpack processes are created no more to load all "cores" on HT processors
+- added tray icon option. When enabled, LinX will be minimized to tray
+- small interface fixes
+
+
+LinX 0.5.4:
+
+- HyperThreading support added
+- thread control added. You can now set the number of threads Linpack will create and thus control the number of physical cores that will be stressed. This setting is located in the Settings window (who'd have thought? )
+- Settings window with all existing and a couple of new settings added. No need to edit the ini-file manually now
+- main menu redesigned
+- lots of minor bugs found and fixed
+- performance optimized a little bit more
+- graphs have now customizable top and bottom limits
+- changed the icon a bit
+
+
+LinX 0.5.3:
+
+- the temporary log file is no more created during testing, performance increased a little
+- the v10.1 Linpack executables are now AMD compatible too
+- log interface redesigned
+- All mem ("All") button added. When in pressed state LinX will always use the current maximum available memory
+- localization support via the "local.lng" file added
+
+
+LinX 0.5.2:
+
+- Linpack executables updated to version 10.1 (for Intel CPUs only; for AMD users there's still Linpack 10.0 with no CPU restrictions, just rename and replace the linpack_xeon32.exe_amd and linpack_xeon64.exe_amd)
+- added Speedfan support. LinX can now import such data as CPU temperature, vcore, fan speed and +12V voltage from Speedfan. Fill in the values in the Speedfan.ini file in LinX' folder for this to work (see readme for more details)
+- some interface enhancements/fixes
+- consumed memory calculation is slightly improved
+- LinX now uses ini-files (LinX.ini and Speedfan.ini) to store its settings in. Those who like tweaking things may now override default values for the amount of memory to leave for OS in Max mem mode and maximum Problem size for Linpack32
+- the Leading Dimensions value is now adjusted for maximum performance instead of being equal to Problem Size value. This can be disabled via the UseOptimizedLeadingDimensions=0 key in the LinX.ini
+
+
+LinX 0.5.1:
+
+- LinX can now create, display and save as PNG graphs for CPU temp, CPU fan speed, vcore and +12V voltage based on Everest data. Graphs are shown in separate windows, can be resized and made semi-transparent
+- the green status field now flashes in all time modes (elapsed, remaining & finish time)
+- you can now make screenshot of LinX's window by pressing the F5 key. The screenshot will be saved as LinX.png in program's folder. Pressing F5 in graph windows will save the corresponding graph (not the whole window) as PNG image
+
+
+LinX 0.5.0
+
+- added Everest support. LinX can now display CPU temperature from Everest. The displayed temperature is the temperature of the hottest core; if a CPU doesn't have core sensors then a temperature from an external sensor is displayed. For this to work you'll need to have Everest running in background with "Enable shared memory" option checked (in Everest "File -> Preferences -> External Applications"; you might also want to set update frequency to 1 sec for external applications and adjust Tjmax value)
+- added an option to stop testing if CPU temp exceeds the desired temp (see above)
+- LinX now correctly reads values from damaged lininput file
+- and saves most of its settings on exit
+
+
+LinX 0.4.9
+
+- LinX' window is now vertically resizeable for better log visibility
+- fixed a program error that occured when an error was detected on last run
+- "Always on top" mode added (double click window's caption to toggle)
+- LinX now saves window size on exit
+- when "Enable sounds" checkbox is checked sound will be played on successfull completion of all tests too
+- interface fixes/improvements
+
+
+LinX 0.4.8
+
+- once again rewritten that "polling" algorithm. LinX' window can now be safely moved during testing
+
+
+LinX 0.4.7
+
+- Linpack "polling" algorithm rewritten, resulting in noticeable performance increase. Only one temporary file is used during testing now
+- maximum Problem Size for 32-bit Linpack corrected
+- added Residual (norm) power check (to detect some errors after 1st pass)
+- samll interface fixes
+
+
+LinX 0.4.6
+
+- thanks to Right again 64-bit Linpack now works with AMD processors
+- improved algorithm for retrieving total/available memory. Now LinX correctly determines free memory on 32-bit OSes with more than 2 GB of RAM and on 64-bit OSes with more than 4 GB of RAM
+- added ~2 GB maximum memory limit for 32-bit Linpack (due to Linpack's inner restriction)
+- added sound notification on error
+
+
+LinX 0.4.5
+
+- thanks to Right from forums.overclockers.ru 32-bit Linpack now works on AMD processors too
+- Linpack starting routine modified, works correctly on Windows Vista x64 now
+- .bat-file is no more generated to launch Linpack
+- progressbar added
+- additional indication of completed/total tests added in statusbar
+
+
+LinX 0.4.3
+
+- time display mode can now be changed during testing: single click - toggle elapsed/remaining/estimated finish time, double click - disable time displaying completely
+- Linpack performance improved
+
+
+LinX 0.4.2
+
+- fixed sometimes wrong displayed minimum time/maximum performance
+- minimum time is now displayed in minutes and seconds
+- stopping on error is now optional
+- small interface sixes
+
+
+LinX 0.4.1
+
+- added prompt on program exit when testing is in progress
+- added completed/total tests indication in window's caption
+- added window position saving on exit
+- fixed a bug with errors in log when number of test runs was higher than 255
+- small interface fixes
